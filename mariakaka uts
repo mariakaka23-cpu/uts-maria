@@ -6,7 +6,7 @@ PaaS (Platform as a Service)** berada di atas IaaS; menyediakan platform runtime
 
 SaaS (Software as a Service)** berada di tingkat paling atas: aplikasi langsung digunakan oleh end-user via web atau API. Penyedia mengelola seluruh stack (IaaS + PaaS + aplikasi). Contoh: Gmail, Salesforce.
 
-Keterkaitan:
+Keterkaitanhhg
 - IaaS adalah lapisan dasar (hardware + virtualisasi). PaaS memanfaatkan IaaS untuk menyediakan lingkungan pengembangan/deployment yang dikelola. SaaS dibangun di atas PaaS/IaaS — penyedia SaaS menggunakan platform (PaaS) atau langsung infrastruktur (IaaS) untuk menjalankan aplikasinya.
 - Jika kamu ingin kontrol penuh atas OS atau konfigurasi network -> pilih IaaS. Jika ingin fokus menulis aplikasi tanpa urus infra -> gunakan PaaS. Jika butuh langsung menggunakan aplikasi jadi/siap pakai -> SaaS.
 
@@ -38,20 +38,19 @@ Soal 2 — Gambarkan diagram yang menunjukkan keterkaitan antara cloud native ap
                           ▼
              ┌────────────────────────┐
              │         SaaS           │
-             │ Aplikasi Web / Mobile │
+             │ Aplikasi Web / Mobile  │
              │   Dipakai End-User     │
              └────────────────────────┘
 
 soal 3
 1. Perbandingan Kecepatan Python Free-Threaded (FT) vs Python GIL
-🔥 Hasil Utama
+ Hasil Utama
 
 Free-Threaded (3.13-ft / 3.14-ft) lebih cepat ketika menjalankan multi-threaded tasks karena nggak pake GIL.
 
 Python GIL (versi normal) tetap cepat untuk single-thread, tapi melambat ketika melakukan banyak operasi paralel di thread.
 
-⚙️ Kenapa FT Lebih Cepat?
-
+alasan:
 Tanpa GIL → thread beneran paralel
 Di versi normal, satu waktu cuma satu thread yang boleh eksekusi Python bytecode.
 
@@ -61,7 +60,7 @@ FT bisa memakai multi-core dengan maksimal.
 Cocok untuk I/O banyak dan task paralel ringan
 Misal fetching API, scraping, worker paralel.
 
-🧪 Hasil Pengujian (contoh)
+ Hasil Pengujian (contoh)
 Mode	Waktu
 AsyncIO	~0.58 detik
 Multiprocessing	~1.40 detik
@@ -69,7 +68,7 @@ Multiprocessing	~1.40 detik
 AsyncIO paling kencang karena non-blocking I/O.
 
 2. Performa Multiprocessing
-💡 Temuan:
+ Temuan:
 
 Multiprocessing tetap powerful, tapi overhead tinggi.
 
@@ -79,7 +78,7 @@ CPU-bound tasks (heavy computation)
 
 pekerjaan terpisah yang perlu CPU core masing-masing
 
-⚠️ Kekurangan:
+ Kekurangan:
 
 Start-up process berat
 
@@ -87,7 +86,7 @@ Inter-process communication lambat
 
 Tidak cocok untuk request HTTP kecil-kecil
 
-🔎 Pada test lo:
+test :
 
 Multiprocessing = 1.40 detik
 AsyncIO = 0.58 detik
@@ -124,7 +123,7 @@ async performance
 
 overhead multiprocessing
 
-🎯 Kesimpulan Akhir
+Kesimpulan
 
 FT Python = terbaik untuk thread-based parallelism (lebih cepat daripada GIL).
 
